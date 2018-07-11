@@ -19,4 +19,15 @@ class HtmlTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals("<img src='img/photo.png'>", $img);
         
     }
+
+    public function testCriarTagAComImgAncora()
+    {
+        $html = new Html;
+        $img = $html->img('img/photo.png');
+
+        $a = $html->a('www.exemplo.com.br', $img);
+        
+        $this->assertEquals("<a href='www.exemplo.com.br'><img src='img/photo.png'></a>", $a);
+
+    }
 }
