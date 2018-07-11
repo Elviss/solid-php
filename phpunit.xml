@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <phpunit bootstrap="./vendor/autoload.php">
     
-    <testsuits>
+    <testsuites>
         
-        <testesuite name="The project's test suite">
+        <testsuite name="The project's test suite">
             <directory>./tests</directory>
-        </testesuite>
+        </testsuite>
         
-    </testsuits>
+    </testsuites>
     
 </phpunit>
