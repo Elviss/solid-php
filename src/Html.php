@@ -6,7 +6,13 @@
  * Time: 00:04
  */
 
+namespace Solid\Html;
+
 class Html
 {
 
+    public function img(string $src)
+    {
+        return "<img src='$src'>";
+    }
 }
