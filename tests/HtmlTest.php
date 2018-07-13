@@ -27,7 +27,7 @@ class HtmlTest extends \PHPUnit\Framework\TestCase
 
         $a = $html->a('www.exemplo.com.br', $img);
         
-        $this->assertEquals("<a href='www.exemplo.com.br'><img src='img/photo.png'></a>", (string)$a);
+        $this->assertEquals("<a href='www.exemplo.com.br'><img src='img/photo.png'></a>", $a);
 
     }
 

@@ -18,29 +18,36 @@ class Html
 
     public function a(string $href, string $anchor)
     {
+        $tag = $this->attributes();
+        
+        $tag->href = $href;
+        $tag->anchor = $anchor;
+        
+        return $tag;
+    }
+
+    private function attributes()
+    {
         $tag = new class {
 
             private $attributes;
-            
+
             public function attribute(array $attributes)
             {
                 $result = array();
 
                 foreach ($attributes as $key => $value) {
-                    $result[] = $key . "='" . $value . "'"; 
+                    $result[] = $key . "='" . $value . "'";
                 }
-                
+
                 $this->attributes = ' '.implode(' ', $result);
             }
-            
+
             public function __toString()
             {
-                return "<a href='$this->href'$this->attributes>$this->anchor</a>"; 
-            }    
+                return "<a href='$this->href'$this->attributes>$this->anchor</a>";
+            }
         };
-        
-        $tag->href = $href;
-        $tag->anchor = $anchor;
         
         return $tag;
     }
