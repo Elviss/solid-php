@@ -27,7 +27,20 @@ class HtmlTest extends \PHPUnit\Framework\TestCase
 
         $a = $html->a('www.exemplo.com.br', $img);
         
-        $this->assertEquals("<a href='www.exemplo.com.br'><img src='img/photo.png'></a>", $a);
+        $this->assertEquals("<a href='www.exemplo.com.br'><img src='img/photo.png'></a>", (string)$a);
+
+    }
+
+    public function testCriarTagAComClassEId()
+    {
+        $html = new Html;
+
+        $a = $html->a('www.exemplo.com.br', 'Meu Site');
+        $a->attribute(array(
+            'class' => 'btn btn-default'    
+        ));
+        
+        $this->assertEquals("<a href='www.exemplo.com.br' class='btn btn-default'>Meu Site</a>", $a);
 
     }
 }
